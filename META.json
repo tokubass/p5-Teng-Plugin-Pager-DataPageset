@@ -1,7 +1,7 @@
 {
-   "abstract" : "It's new $module",
+   "abstract" : "Pager using DataPageset",
    "author" : [
-      "tokubass <tokubass@cpan.org>"
+      "tokubass <tokubass {at} cpan.org>"
    ],
    "dynamic_config" : 0,
    "generated_by" : "Minilla/v0.5.3, CPAN::Meta::Converter version 2.130880",
@@ -42,15 +42,20 @@
       },
       "runtime" : {
          "requires" : {
+            "Teng" : "0",
             "perl" : "5.008005"
          }
       },
       "test" : {
          "requires" : {
+            "Mock::Basic" : "0",
             "Test::More" : "0.98"
          }
       }
    },
    "release_status" : "unstable",
-   "version" : "0.01"
+   "version" : "0.01",
+   "x_contributors" : [
+      "tokubass <tokubass@cpan.org>"
+   ]
 }

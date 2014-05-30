@@ -68,7 +68,7 @@ __END__
 
 =head1 NAME
 
-Teng::Plugin::Pager::DataPageset;
+Teng::Plugin::Pager::DataPageset - Pager using DataPageset
 
 =head1 SYNOPSIS
 
