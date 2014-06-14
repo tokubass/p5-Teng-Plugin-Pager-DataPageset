@@ -12,7 +12,7 @@ Teng::Plugin::Pager::DataPageset - Pager using DataPageset
     my $db = MyApp::DB->new(dbh => $dbh);
     my $page = $c->req->param('page');
 
-    my ($rows, $pager) = $db->search_with_pager(user => {
+    my ($rows, $pager) = $db->search_with_data_pageset(user => {
         type => 3
     },{
         page  => $page,
@@ -27,7 +27,7 @@ This is a helper for pagination using Data::Pageset.
 
 # METHODS
 
-## search\_with\_pager($table\_name, \\%where, \\%opts)
+## search\_with\_data\_pageset($table\_name, \\%where, \\%opts)
 
 This method returns ArrayRef\[Teng::Row\] and instance of [Data::Pageset](http://search.cpan.org/perldoc?Data::Pageset).
 

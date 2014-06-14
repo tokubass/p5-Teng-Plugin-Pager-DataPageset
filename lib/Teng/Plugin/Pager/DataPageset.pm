@@ -10,9 +10,9 @@ use Carp ();
 
 our $VERSION = "0.01";
 
-our @EXPORT = qw/search_with_pager/;
+our @EXPORT = qw/search_with_data_pageset/;
 
-sub search_with_pager {
+sub search_with_data_pageset {
     my ($self, $table_name, $where, $opt) = @_;
 
     my $table = $self->schema->get_table($table_name) or Carp::croak("'$table_name' is unknown table");
@@ -80,7 +80,7 @@ Teng::Plugin::Pager::DataPageset - Pager using DataPageset
     my $db = MyApp::DB->new(dbh => $dbh);
     my $page = $c->req->param('page');
 
-    my ($rows, $pager) = $db->search_with_pager(user => {
+    my ($rows, $pager) = $db->search_with_data_pageset(user => {
         type => 3
     },{
         page  => $page,
@@ -95,7 +95,7 @@ This is a helper for pagination using Data::Pageset.
 
 =head1 METHODS
 
-=head2 search_with_pager($table_name, \%where, \%opts)
+=head2 search_with_data_pageset($table_name, \%where, \%opts)
 
 This method returns ArrayRef[Teng::Row] and instance of L<Data::Pageset>.
 

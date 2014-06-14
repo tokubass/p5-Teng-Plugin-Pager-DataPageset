@@ -16,7 +16,7 @@ for my $i (1..$TOTAL_ENTRIES) {
 }
 
 subtest 'simple' => sub {
-    my ($rows, $pager) = $db->search_with_pager(mock_basic => {
+    my ($rows, $pager) = $db->search_with_data_pageset(mock_basic => {
     },{
         rows => 3,
         page => 1,
@@ -31,7 +31,7 @@ subtest 'simple' => sub {
 };
 
 subtest 'last' => sub {
-    my ($rows, $pager) = $db->search_with_pager(mock_basic => {
+    my ($rows, $pager) = $db->search_with_data_pageset(mock_basic => {
     },{
         rows => 3,
         page => 11,
@@ -46,7 +46,7 @@ subtest 'last' => sub {
 };
 
 subtest 'simple_with_columns' => sub {
-    my ($rows, $pager) = $db->search_with_pager(mock_basic => {
+    my ($rows, $pager) = $db->search_with_data_pageset(mock_basic => {
     },{
         columns => [qw/id/],
         rows => 3,
@@ -65,7 +65,7 @@ subtest 'simple_with_columns' => sub {
 };
 
 subtest 'simple_with_+columns' => sub {
-    my ($rows, $pager) = $db->search_with_pager( mock_basic => {
+    my ($rows, $pager) = $db->search_with_data_pageset( mock_basic => {
     },{
         '+columns' => [\'id+20 as calc'],
         rows => 3,
